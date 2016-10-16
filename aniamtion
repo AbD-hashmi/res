@@ -1,0 +1,59 @@
+package com.example.rohan.myapplication;
+
+import android.net.Uri;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.common.api.GoogleApiClient;
+
+public class animation extends ActionBarActivity {
+    private ImageView mImageview;
+
+    private animation rotateAnim;
+    private Animation scaleAnim;
+    private animation translateAnim;
+    private animation alphaAnim;
+
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_animation);
+     mImageview=(ImageView)findViewById(R.id.football);
+    }
+
+
+    public void scaleAnimation(View view)
+   {
+        scaleAnim= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.scale_anim);
+        mImageview.startAnimation(scaleAnim);
+
+    }
+
+    public void translateAnimation(View view){
+        translateAnim= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.translate_anim);
+        mImageview.startAnimation(translateAnim);
+
+
+    }
+    public void rotateAnimation(View view){
+       rotateAnim= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_anim);
+        mImageview.startAnimation(rotateAnim);
+
+    }
+
+    public void alphaAnimation(View view){
+        scaleAnim= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.alpha_anim);
+        mImageview.startAnimation(alphaAnim);
+
+    }
